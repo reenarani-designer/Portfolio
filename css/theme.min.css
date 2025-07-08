@@ -1,21 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap");html,body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+:root {
+  --primary-color: #ff0f7b;
+  --secondary-color: #CD3A9D;
+  --txt-color: #333333;
+  --white-color: #ffffff;
+  --black-color: #000000;
+} 
+
+html,body {
     width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 body {
     overflow-x: hidden;
     position: relative;
     z-index: 1;
-    background: black;
+    background: #ffffff;
     width: auto;
-    min-height: 100%
+    min-height: 100%;
 }
-
-:root {
-    --bs-dark-rgb: 24, 26, 28
-}
-
 .container {
     padding: 0 20px
 }
@@ -29,9 +33,11 @@ img {
 .hero-section {
     padding: 180px 0;
 	margin-bottom: 70px;
-	background: url(../images/background.jpg);
+	background: url(../images/hero-bg1.jpg); 
 	background-repeat: no-repeat;
     background-size: cover;
+    /*background: linear-gradient(135deg, #d2c4f1 0%, var(--white-color) 20%, var(--white-color) 80%, #e9e1fb 100%);*/
+    
 }
 
 @media (max-width: 1199.98px) {
@@ -73,7 +79,8 @@ img {
     width: 100%;
     height: 380px;
 	object-fit:cover;
-    border-radius: 10%
+    border-radius: 10%;
+    filter: hue-rotate(90deg) saturate(120%) brightness(100%);
 }
 
 @media (max-width: 1199.98px) {
@@ -161,7 +168,7 @@ img {
     content: attr(data-text);
     position: absolute;
     left: 0;
-    color: white;
+    color: #333333;
     -webkit-transition: ease-out 0.16s;
     transition: ease-out 0.16s
 }
@@ -206,7 +213,7 @@ img {
         position: absolute;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        background: white;
+        background: var(--primary-color);
         width: 10px;
         height: 10px;
         border-radius: 50%;
@@ -268,7 +275,7 @@ img {
 }
 
 input:not(.form-check-input),textarea {
-    background: #181a1c;
+    background: var(--white-color);
     width: 100%;
     border: 0;
     margin-bottom: 1rem;
@@ -279,6 +286,10 @@ input:not(.form-check-input),textarea {
     -webkit-transition: ease-out 0.16s;
     transition: ease-out 0.16s
 }
+input[type=submit]{
+    background: var(--primary-color);
+    color: var(--white-color);
+}
 
 input:not(.form-check-input):focus,input:not(.form-check-input):active,textarea:focus,textarea:active {
     outline: 0;
@@ -288,33 +299,34 @@ input:not(.form-check-input):focus,input:not(.form-check-input):active,textarea:
 textarea {
     height: 160px
 }
+[type=submit]
 
 input:not(.form-check-input),textarea,.form-control {
-    color: rgba(255,255,255,0.8)
+    color: var(--txt-color)
 }
 
 input:not(.form-check-input)::-webkit-input-placeholder,textarea::-webkit-input-placeholder,.form-control::-webkit-input-placeholder {
-    color: rgba(255,255,255,0.4)
+    color: rgba(0, 0, 0, 0.4)
 }
 
 input:not(.form-check-input)::-moz-placeholder,textarea::-moz-placeholder,.form-control::-moz-placeholder {
-    color: rgba(255,255,255,0.4)
+    color: rgba(0, 0, 0, 0.4)
 }
 
 input:not(.form-check-input):-ms-placeholder,textarea:-ms-placeholder,.form-control:-ms-placeholder {
-    color: rgba(255,255,255,0.4)
+    color: rgba(0, 0, 0, 0.4)
 }
 
 input:not(.form-check-input)::-ms-placeholder,textarea::-ms-placeholder,.form-control::-ms-placeholder {
-    color: rgba(255,255,255,0.4)
+    color: rgba(0, 0, 0, 0.4)
 }
 
 input:not(.form-check-input)::placeholder,textarea::placeholder,.form-control::placeholder {
-    color: rgba(255,255,255,0.4)
+    color: rgba(0, 0, 0, 0.4)
 }
 
 input:not(.form-check-input):focus,textarea:focus,.form-control:focus {
-    border-color: rgba(255,255,255,0.3)
+    border-color: rgba(0, 0, 0, 0.3)
 }
 
 label {
@@ -393,7 +405,7 @@ ul.list-inline-dot li:before {
     left: 0;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
+    background: var(--black-color);
     width: 5px;
     height: 5px;
     border-radius: 50%
@@ -408,10 +420,10 @@ ul.list-inline-dot li:first-child:before {
 }
 
 body {
-    color: rgba(255,255,255,0.8);
-    font-family: "Open Sans",sans-serif;
+    color: var(--txt-color);
+   font-family: "Quicksand", sans-serif;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0
 }
 
@@ -423,9 +435,9 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
     letter-spacing: -0.3px;
-    color: white;
-    font-family: "Outfit",sans-serif;
-    font-weight: 500
+    color: var(--txt-color);
+   font-family: "Quicksand", sans-serif;
+    font-weight: 700 !important;
 }
 
 p {
@@ -470,7 +482,7 @@ p {
     position: relative;
     display: inline-block;
     padding-left: 20px;
-    font-family: "Outfit",sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 0.9em;
     font-weight: 500;
     text-transform: uppercase;
@@ -491,7 +503,7 @@ p {
 }
 
 .sm-heading {
-    font-family: "Outfit",sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 0.9em;
     font-weight: 500;
     text-transform: uppercase;
@@ -528,14 +540,14 @@ i {
 }
 
 a {
-    color: white;
+    color: var(--txt-color);
     -webkit-transition: linear 0.1s;
     transition: linear 0.1s;
     text-decoration: none
 }
 
 a:hover {
-    color: white;
+    color: var(--primary-color);
     text-decoration: none
 }
 
@@ -556,12 +568,13 @@ a:focus,a:active,button:focus,button:active {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    background: rgba(255,255,255,0.15);
+    background: linear-gradient(45deg, #ddd7f9 0%, #eed9f6 51%, #d3ccf6 100%);
+    background: var(--primary-color);
     backdrop-filter: blur(5px);
     border-radius: 3em;
     padding: 13px 30px;
-    color: white;
-    font-family: "Outfit",sans-serif;
+    color: var(--txt-color);
+    font-family: "Quicksand", sans-serif;
     font-size: 0.9em;
     font-weight: 500;
     text-transform: uppercase;
@@ -576,9 +589,9 @@ a:focus,a:active,button:focus,button:active {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
-    background-color: #ff82f3;
-    background-image: linear-gradient(45deg, #ff0f7b 0%, #CD3A9D 50%, #CD3A9D 30%);
+    opacity: 0; 
+    background: linear-gradient(45deg, #ff0f7b 0%, #CD3A9D 50%, #CD3A9D 30%);
+    background: var(--secondary-color);
     width: 100%;
     height: 100%;
     -webkit-transition: linear 0.1s;
@@ -595,7 +608,7 @@ a:focus,a:active,button:focus,button:active {
     content: attr(data-text);
     position: absolute;
     left: 0;
-    color: white;
+    color: var(--white-color);
     -webkit-transition: ease-out 0.14s;
     transition: ease-out 0.14s
 }
@@ -611,8 +624,9 @@ a:focus,a:active,button:focus,button:active {
 }
 
 .button:hover {
-    background: rgba(255,255,255,0.15);
-    color: white
+    background: -webkit-linear-gradient(45deg, #ff0f7b 30%, #CD3A9D 50%, #CD3A9D 100%);
+    background: var(--secondary-color);
+    color: var(--white-color);
 }
 
 .button:hover:after {
@@ -640,8 +654,9 @@ a:focus,a:active,button:focus,button:active {
 }
 
 .button-white {
-    background: white;
-    color: black
+    background: linear-gradient(45deg, var(--primary-color) 0%, var(--primary-color) 51%, var(--primary-color) 100%);
+    color: var(--txt-color);
+    
 }
 
 .button-white:after {
@@ -649,12 +664,12 @@ a:focus,a:active,button:focus,button:active {
 }
 
 .button-white span:before,.button-white span:after {
-    color: black
+    color: var(--white-color);;
 }
 
 .button-white:hover {
-    background: white;
-    color: black
+    background: -webkit-linear-gradient(45deg, var(--secondary-color) 30%, var(--secondary-color) 50%, var(--secondary-color) 100%);
+    color: var(--txt-color);
 }
 
 .button-dot {
@@ -668,7 +683,7 @@ a:focus,a:active,button:focus,button:active {
     right: 32px;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    background: white;
+    background: var(--white-color);
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -695,7 +710,7 @@ a:focus,a:active,button:focus,button:active {
 }
 
 .button-dot.button-white:before {
-    background: black
+    background: var(--white-color);
 }
 
 .button-dot.button-white:hover:before {
@@ -707,7 +722,7 @@ a:focus,a:active,button:focus,button:active {
     overflow: hidden;
     z-index: 1;
     display: inline-block;
-    background: rgba(255,255,255,0.15);
+    background: var(--primary-color);
     backdrop-filter: blur(5px);
     width: 50px;
     height: 50px;
@@ -726,8 +741,7 @@ a:focus,a:active,button:focus,button:active {
     top: 0;
     left: 0;
     opacity: 0;
-    background-color: #ff82f3;
-    background-image: linear-gradient(45deg, #ff0f7b 0%, #CD3A9D 50%, #ff930f 100%);
+    background-color: var(--secondary-color); 
     width: 100%;
     height: 100%;
     -webkit-transition: linear 0.1s;
@@ -800,7 +814,7 @@ a:focus,a:active,button:focus,button:active {
     z-index: 1;
     position: relative;
     overflow: hidden;
-    background: #181a1c;
+    background: #f5f5f5;
     padding: 30px;
     border-radius: 0.5em
 }
@@ -826,8 +840,8 @@ a:focus,a:active,button:focus,button:active {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #ff82f3;
-    background-image: linear-gradient(45deg, #ff0f7b 0%, #CD3A9D 50%, #CD3A9D 100%);
+    background-color: var(--primary-color);
+    background-image: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
     width: 100%;
     height: 2px;
     -webkit-transition: linear 0.1s;
@@ -836,7 +850,8 @@ a:focus,a:active,button:focus,button:active {
 
 .fancy-box:hover:before {
     visibility: visible;
-    opacity: 0.1
+    opacity: 0.1;
+    background: var(--primary-color);
 }
 
 @media (max-width: 1199.98px) {
@@ -859,7 +874,7 @@ a:focus,a:active,button:focus,button:active {
     z-index: 991;
     padding: 5px 0;
     text-align: center;
-	background: rgba(0, 0, 0, 0.64);
+	background: #ffffff21;
 }
 
 .header .container-fluid {
@@ -938,7 +953,7 @@ a:focus,a:active,button:focus,button:active {
     display: block;
     width: 100%;
     margin-bottom: 10px;
-    font-family: "Outfit",sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 1.25rem
 }
 
@@ -949,7 +964,7 @@ a:focus,a:active,button:focus,button:active {
 .header .header-wrapper .header-nav .nav-box .nav .nav-item .nav-link {
     position: relative;
     padding: 0;
-    color: white;
+    color: var(--white-color);
     -webkit-transition: ease-out 0.2s;
     transition: ease-out 0.2s
 }
@@ -1026,7 +1041,7 @@ a:focus,a:active,button:focus,button:active {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     border-radius: 1em;
-	background: linear-gradient(to right bottom, #3e383a, #16181c);
+	/*background: linear-gradient(to right bottom, #3e383a, #16181c);*/
 }
 
 .portfolio-box .portfolio-img a {
@@ -1041,8 +1056,8 @@ a:focus,a:active,button:focus,button:active {
     top: 0;
     left: 0;
     opacity: 0;
-    background-color: #ff82f3;
-    background-image: linear-gradient(45deg, #ff0f7b 0%, #CD3A9D 50%, #400d64 100%);
+    background-color: var(--primary-color);
+    background-image: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
     width: 100%;
     height: 100%;
     -webkit-transition: linear 0.1s;
@@ -1101,7 +1116,7 @@ a:focus,a:active,button:focus,button:active {
 
 
 .bg-black {
-    background: #000
+    background: var(--black-color)
 }
 
 .bg-dark {
@@ -1109,7 +1124,7 @@ a:focus,a:active,button:focus,button:active {
 }
 
 .bg-white {
-    background: #fff
+    background: var(--white-color)
 }
 
 .bg-green {
@@ -1153,15 +1168,15 @@ a:focus,a:active,button:focus,button:active {
 }
 
 .bg-dark-content h1 a:hover,.bg-dark h1 a:hover,*[class*='bg-black'] h1 a:hover,.bg-dark-content h1 a:focus,.bg-dark h1 a:focus,*[class*='bg-black'] h1 a:focus,.bg-dark-content h2 a:hover,.bg-dark h2 a:hover,*[class*='bg-black'] h2 a:hover,.bg-dark-content h2 a:focus,.bg-dark h2 a:focus,*[class*='bg-black'] h2 a:focus,.bg-dark-content h3 a:hover,.bg-dark h3 a:hover,*[class*='bg-black'] h3 a:hover,.bg-dark-content h3 a:focus,.bg-dark h3 a:focus,*[class*='bg-black'] h3 a:focus,.bg-dark-content h4 a:hover,.bg-dark h4 a:hover,*[class*='bg-black'] h4 a:hover,.bg-dark-content h4 a:focus,.bg-dark h4 a:focus,*[class*='bg-black'] h4 a:focus,.bg-dark-content h5 a:hover,.bg-dark h5 a:hover,*[class*='bg-black'] h5 a:hover,.bg-dark-content h5 a:focus,.bg-dark h5 a:focus,*[class*='bg-black'] h5 a:focus,.bg-dark-content h6 a:hover,.bg-dark h6 a:hover,*[class*='bg-black'] h6 a:hover,.bg-dark-content h6 a:focus,.bg-dark h6 a:focus,*[class*='bg-black'] h6 a:focus {
-    color: #fff
+    color: var(--white-color)
 }
 
 .bg-dark-content a:not([class*='button']),.bg-dark a:not([class*='button']),*[class*='bg-black'] a:not([class*='button']) {
-    color: white
+    color: var(--white-color)
 }
 
 .bg-dark-content a:not([class*='button']):hover,.bg-dark a:not([class*='button']):hover,*[class*='bg-black'] a:not([class*='button']):hover,.bg-dark-content a:not([class*='button']):focus,.bg-dark a:not([class*='button']):focus,*[class*='bg-black'] a:not([class*='button']):focus {
-    color: #fff
+    color: var(--white-color)
 }
 
 .border-radius {
@@ -1173,11 +1188,11 @@ a:focus,a:active,button:focus,button:active {
 }
 
 .font-family-primary {
-    font-family: "Open Sans",sans-serif
+    font-family: "Quicksand", sans-serif;
 }
 
 .font-family-secondary {
-    font-family: "Outfit",sans-serif
+    font-family: "Quicksand", sans-serif;
 }
 
 .fw-medium {
@@ -1193,15 +1208,15 @@ a:focus,a:active,button:focus,button:active {
 }
  
 *.text-black {
-    color: #000
+    color: var(--black-color);
 }
 
 *.text-dark {
-    color: #181a1c
+    color: var(--black-color);
 }
  
-.text-gradient {
-    background: -webkit-linear-gradient(45deg, #ff0f7b 30%, #CD3A9D 50%, #CD3A9D 100%);
+.text-gradient { 
+    background: -webkit-linear-gradient(45deg, var(--primary-color) 30%, var(--primary-color) 50%, var(--primary-color)100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
 }
@@ -1221,7 +1236,7 @@ a:focus,a:active,button:focus,button:active {
   
 }
 .timeline:before {
-  background-color: #fff;
+  background-color: var(--secondary-color);
   content: '';
   margin-left: -1px;
   position: absolute;
@@ -1236,7 +1251,7 @@ a:focus,a:active,button:focus,button:active {
   list-style: none;
 }
 .timeline-event .timeline-event-copy{
-	border-top: 1px solid #121415;
+	border-top: 1px solid #d7d7d7;
 }
 .timeline-event:first-child() .timeline-event-copy{
   border-top: none;
@@ -1246,12 +1261,12 @@ a:focus,a:active,button:focus,button:active {
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  background-color: #ff0f7b;
+  background-color: var(--primary-color);
 }
 .timeline-event:hover .timeline-event-thumbnail {
-  -moz-box-shadow: inset 40em 0 0 0 #ff0f7b;
-  -webkit-box-shadow: inset 40em 0 0 0 #ff0f7b;
-  box-shadow: inset 40em 0 0 0 #ff0f7b;
+  -moz-box-shadow: inset 40em 0 0 0 var(--primary-color);
+  -webkit-box-shadow: inset 40em 0 0 0 var(--primary-color);
+  box-shadow: inset 40em 0 0 0 var(--primary-color);
 }
 
 .timeline-event-copy {
@@ -1283,8 +1298,8 @@ a:focus,a:active,button:focus,button:active {
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color: #CD3A9D;
-  outline: 4px solid #000;
+  background-color: var(--primary-color);
+  outline: 4px solid #ead8e4;
   display: block;
   margin: 0.5em 0.5em 0.5em -0.5em;
   position: absolute;
@@ -1302,10 +1317,10 @@ a:focus,a:active,button:focus,button:active {
   transition: box-shadow 0.5s ease-in 0.1s;
   color: white;
   font-size: 0.75em;
-  background-color: #CD3A9D;
-  -moz-box-shadow: inset 0 0 0 0em #CD3A9D;
-  -webkit-box-shadow: inset 0 0 0 0em #CD3A9D;
-  box-shadow: inset 0 0 0 0em #CD3A9D;
+  background-color: var(--primary-color);
+  -moz-box-shadow: inset 0 0 0 0em var(--primary-color);
+  -webkit-box-shadow: inset 0 0 0 0em var(--primary-color);
+  box-shadow: inset 0 0 0 0em var(--primary-color);
   display: inline-block;
   margin-bottom: 1.2em;
   padding: 0.25em 1em 0.2em 1em;
@@ -1391,7 +1406,7 @@ a:focus,a:active,button:focus,button:active {
 .chart__bar {
   height: 30px;
   margin-bottom: 10px;
-  background: linear-gradient(to left, #ff0f7b, #CD3A9D);
+  background: linear-gradient(to left, var(--primary-color), var(--primary-color));
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   opacity: 0;
