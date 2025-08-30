@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /Portfolio/template1.html
+Disallow: /Portfolio/template2.html
+
+Sitemap: https://reenarani-designer.github.io/Portfolio/sitemap.xml
